@@ -1,0 +1,28 @@
+{
+  "name": "vue3-number-roll-plus",
+  "version": "0.1.0",
+  "description": "vue数字滚动组件",
+  "main": "main.umd.min.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build-plugin":"vue-cli-service build --target lib ./src/index.js --dest dist --name main"
+  },
+  "keywords": [
+    "vue3",
+    "vue组件",
+    "数字滚动",
+    "数字"
+  ],
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0"
+  },
+  "author": "ludengdeng",
+  "license": "ISC"
+}
