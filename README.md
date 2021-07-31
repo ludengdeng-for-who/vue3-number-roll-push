@@ -1,7 +1,7 @@
 ### 安装
 
 ```js
-npm install vue-number-roll-plus --save
+npm install vue3-number-roll-plus --save
 
 ```
 
@@ -22,7 +22,7 @@ npm install vue-number-roll-plus --save
 
 <script>
 import VueNumberRollPlus from "vue3-number-roll-plus"
-import "vue-number-roll-plus/main.css"
+import "vue3-number-roll-plus/main.css"
 export default {
   components: {
     VueNumberRollPlus
@@ -36,7 +36,7 @@ export default {
 |    属性     |   属性含义   |     类型      | 默认值  |
 | :---------: | :----------: | :-----------: | :-----: |
 |   number    |  传入的数字  | Number/String |    0    |
-| isSemicolon | 是否三位分隔 |    Boolean    |  true   |
+| isSemicolon | 是否三位分隔 |    Boolean    |  false   |
 |    speed    | 滚动速度(s)  |    Number     |    1    |
 | background  |    背景色    |    String     | #0e68cc |
 
