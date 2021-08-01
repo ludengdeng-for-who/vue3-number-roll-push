@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { reactive, toRefs, watch, defineComponent } from "vue";
+import { reactive, toRefs, watch, defineComponent} from "vue";
 export default defineComponent({
   props: {
     number: {
@@ -53,16 +53,25 @@ export default defineComponent({
       default: "#0e68cc",
     },
   },
-  emits: ["numberChange"],
+  emits: ["numberChange", "done"],
   setup(props, ctx) {
     let obj = reactive({
       computedNumber: [],
     });
     initPage();
-    watch(props, () => {
-      initPage();
-      ctx.emit("numberChange", props.number);
-    });
+    setTimeout(() => {
+      ctx.emit("done", props.number);
+    }, props.speed * 1000);
+    watch(
+      () => props.number,
+      (val) => {
+        initPage();
+        ctx.emit("numberChange", val);
+        setTimeout(() => {
+          ctx.emit("done", val);
+        }, props.speed * 1000);
+      }
+    );
     function string2List(str) {
       const list = [];
       const res = [...String(str)].reverse();
@@ -81,6 +90,7 @@ export default defineComponent({
       return list;
     }
     function setComputedList() {
+      obj.computedNumber = [];
       string2List(props.number).forEach(() => {
         obj.computedNumber.push(0);
       });
@@ -89,7 +99,7 @@ export default defineComponent({
       setComputedList();
       setTimeout(() => {
         obj.computedNumber = string2List(props.number);
-      }, 0);
+      });
     }
     return {
       ...toRefs(obj),

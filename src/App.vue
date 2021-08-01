@@ -1,5 +1,6 @@
 <template>
   <vue-number-roll-plus :number="num" background="transparent" />
+  <button @click="done">aaaa</button>
 </template>
 
 <script>
@@ -11,9 +12,13 @@ export default {
     VueNumberRollPlus,
   },
   setup(props) {
-    let num = ref(123456);
+    let num = ref(999);
+    function done() {
+      num.value += 5;
+    }
     return {
       num,
+      done,
     };
   },
 };

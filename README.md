@@ -1,3 +1,6 @@
+vue2版本请移步  **(vue-number-roll-plus)[https://www.npmjs.com/package/vue-number-roll-plus]**
+
+
 ### 安装
 
 ```js
@@ -13,8 +16,6 @@ npm install vue3-number-roll-plus --save
 <template>
    <vue-number-roll-plus
       :number="9999"
-      :isSemicolon="false"
-      :speed="1"
       background="transparent"
     >
   </vue-number-roll-plus>
@@ -45,3 +46,4 @@ export default {
 |    事件名    |      事件      |  参数  |
 | :----------: | :------------: | :----: |
 | numberChange | 数字变化后触发 | number |
+| done | 数字滚动结束之后触发 | number |
